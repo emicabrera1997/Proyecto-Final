@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon >menu</mat-icon>
+        </button>
+        <span>Gestión Alumnos</span>
+    </mat-toolbar-row>
+
+</mat-toolbar>
+<mat-sidenav-container class="contenedor">
+    <mat-sidenav #sidenav opened="true">
+        <mat-nav-list>
+            <a mat-list-item>Inicio</a>
+            <a mat-list-item>Gestion Alumnos</a>
+            <a mat-list-item>Gestión Clases</a>
+            <a mat-list-item>Gestión Cursos</a>
+        </mat-nav-list>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="container" style="padding-top: 30px;">
+            <app-consulta-alumnos></app-consulta-alumnos>
+        </div>
+
+    </mat-sidenav-content>
+
+
+</mat-sidenav-container>

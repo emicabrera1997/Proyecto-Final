@@ -1,0 +1,61 @@
+<h1 mat-dialog-title>Alta alumno</h1>
+
+<div mat-dialog-content>
+    <form class="row g-3" [formGroup]="formAlumnos" (ngSubmit)="guardar()">
+        <div class="col-md-6">
+            <label class="form-label">Nombre</label>
+            <input formControlName="nombre" type="text" class="form-control">
+
+            <div *ngIf="formAlumnos.controls['nombre'].dirty && formAlumnos.controls['nombre'].errors?.['required']">
+                Campo obligatorio
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Apellido</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Documento</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Telefono</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-12">
+            <label for="inputAddress" class="form-label">Correo Electronico</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Legajo</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-md-6"></div>
+        <div class="col-md-6">
+            <label class="form-label">Curso</label>
+            <select class="form-select">
+                  <option *ngFor="let cur of cursos">{{cur.nombre + " - " + cur.turno}}</option>
+                </select>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Clase</label>
+            <select class="form-select">
+                  <option *ngFor="let clase of clases">{{clase.nombre}}</option>
+                </select>
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+    </form>
+
+
+
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cerrar</button>
+
+</div>
